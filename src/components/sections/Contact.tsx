@@ -29,14 +29,18 @@ export function Contact() {
                     </p>
 
                     <div className="pt-8">
-                        <a
-                            href="mailto:hello@ericsonbarato.com" // Placeholder email
-                            className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-background transition-all hover:bg-primary/90 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                            aria-label="Send an email to Ericson Barato"
+                        <button
+                            onClick={() => {
+                                if (typeof window !== 'undefined' && (window as any).Calendly) {
+                                    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/ericson-barato/30min' });
+                                }
+                            }}
+                            className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-background transition-all hover:bg-primary/90 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+                            aria-label="Book a call with Ericson Barato"
                         >
-                            Start a Conversation
+                            Book Call
                             <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                        </a>
+                        </button>
                     </div>
                 </motion.div>
             </div>

@@ -129,14 +129,18 @@ export function Hero() {
                         href="#projects"
                         className="rounded-md bg-primary px-8 py-3 text-sm font-semibold text-background transition-all hover:bg-primary/90 hover:scale-105 active:scale-95"
                     >
-                        Explore Workflows
+                        See more
                     </a>
-                    <a
-                        href="#contact"
-                        className="rounded-md border border-slate-700 bg-transparent px-8 py-3 text-sm font-semibold text-slate-300 transition-all hover:bg-slate-800 hover:text-white"
+                    <button
+                        onClick={() => {
+                            if (typeof window !== 'undefined' && (window as any).Calendly) {
+                                (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/ericson-barato/30min' });
+                            }
+                        }}
+                        className="rounded-md border border-slate-700 bg-transparent px-8 py-3 text-sm font-semibold text-slate-300 transition-all hover:bg-slate-800 hover:text-white cursor-pointer"
                     >
-                        Contact Me
-                    </a>
+                        Book Call
+                    </button>
                 </motion.div>
             </div>
         </section>

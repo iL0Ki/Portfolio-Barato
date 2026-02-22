@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,12 +34,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+      <head>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+      </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased min-h-screen bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <div className="fixed inset-0 z-[-1] bg-grid opacity-30"></div>
         {children}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
