@@ -48,7 +48,7 @@ export function Experience() {
                     {/* The Central Vertical Line */}
                     <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-800 -translate-x-1/2" />
 
-                    <div className="space-y-12 md:space-y-24">
+                    <div className="space-y-8 md:space-y-12">
                         {experiences.map((exp, idx) => {
                             const isEven = idx % 2 === 0;
 
@@ -65,7 +65,7 @@ export function Experience() {
                                     />
 
                                     {/* Left Side Content (Empty if odd) */}
-                                    <div className={`w-full md:w-5/12 pl-12 md:pl-0 ${isEven ? "md:pr-12 md:text-right" : "md:order-2 md:pl-12"}`}>
+                                    <div className={`w-full md:w-5/12 pl-12 md:pl-0 ${isEven ? "md:pr-8 md:text-right" : "md:order-2 md:pl-8"}`}>
                                         <motion.div
                                             initial={{ opacity: 0, x: isEven ? -50 : 50, y: 20 }}
                                             whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -86,7 +86,7 @@ export function Experience() {
                                                 {exp.company} <span className="opacity-50 mx-2">|</span> {exp.duration}
                                             </div>
 
-                                            <p className="text-slate-400 leading-relaxed text-sm md:text-base">
+                                            <p className="text-slate-400 leading-relaxed text-sm md:text-base text-justify">
                                                 {exp.description}
                                             </p>
                                         </motion.div>

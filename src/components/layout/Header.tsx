@@ -19,6 +19,18 @@ export function Header() {
                         About
                     </Link>
                     <Link
+                        href="#skills"
+                        className="transition-colors hover:text-primary text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-2 py-1"
+                    >
+                        Skills
+                    </Link>
+                    <Link
+                        href="#experience"
+                        className="transition-colors hover:text-primary text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-2 py-1"
+                    >
+                        Experience
+                    </Link>
+                    <Link
                         href="#projects"
                         className="transition-colors hover:text-primary text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-2 py-1"
                     >
