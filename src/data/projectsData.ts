@@ -103,7 +103,7 @@ export const projectsData: Workflow[] = [
             "/projects/scraper-slide-3.png",
             "/projects/scraper-slide-4.png"
         ],
-        video: "/projects/scrape-blog.mp4",
+        video: "https://drive.google.com/file/d/1jFYCHfhBQJE1Vd4SBEKEStAKj911hMQA/preview",
         tags: ["Web Scraping", "Automation", "Data Extraction", "Python"],
         toolsUsed: ["Python", "BeautifulSoup", "Playwright", "Pandas"],
         timeReduced: "Eliminates manual copy-pasting, reducing content migration time from days to minutes",
