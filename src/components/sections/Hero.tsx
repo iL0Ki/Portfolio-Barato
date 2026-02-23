@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { CALENDLY_BOOKING_URL } from "@/lib/constants";
 
 const AnimatedGrid = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -82,6 +83,15 @@ const AnimatedGrid = () => {
     );
 };
 
+/** Helper to safely invoke the Calendly popup */
+function openCalendlyPopup() {
+    if (typeof window === "undefined") return;
+    const calendly = (window as unknown as { Calendly?: { initPopupWidget: (opts: { url: string }) => void } }).Calendly;
+    if (calendly) {
+        calendly.initPopupWidget({ url: CALENDLY_BOOKING_URL });
+    }
+}
+
 export function Hero() {
     return (
         <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-4">
@@ -132,11 +142,7 @@ export function Hero() {
                         See more
                     </a>
                     <button
-                        onClick={() => {
-                            if (typeof window !== 'undefined' && (window as any).Calendly) {
-                                (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/ericson-barato/30min' });
-                            }
-                        }}
+                        onClick={openCalendlyPopup}
                         className="rounded-md border border-slate-700 bg-transparent px-8 py-3 text-sm font-semibold text-slate-300 transition-all hover:bg-slate-800 hover:text-white cursor-pointer"
                     >
                         Book Call

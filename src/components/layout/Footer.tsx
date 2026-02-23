@@ -8,9 +8,7 @@ export function Footer() {
                     </p>
                 </div>
                 <nav className="flex gap-4" aria-label="Social Links">
-                    <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-2 py-1">GitHub</a>
                     <a href="https://www.linkedin.com/in/ericson-barato-a28590302?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNyUieLEwTduk%2Bvt00farWA%3D%3D" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-400 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-2 py-1">LinkedIn</a>
-                    <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-2 py-1">Twitter</a>
                 </nav>
             </div>
         </footer>

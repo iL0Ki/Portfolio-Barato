@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { useEffect } from "react";
+import { CALENDLY_WIDGET_URL } from "@/lib/constants";
 
 export function Contact() {
     useEffect(() => {
-        // Re-initialize Calendly widget after component mounts
-        if (typeof window !== "undefined" && (window as any).Calendly) {
-            (window as any).Calendly.initInlineWidget({
-                url: "https://calendly.com/ericson-barato/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=6dd58e",
+        if (typeof window !== "undefined" && (window as unknown as { Calendly?: { initInlineWidget: (opts: { url: string; parentElement: HTMLElement | null }) => void } }).Calendly) {
+            (window as unknown as { Calendly: { initInlineWidget: (opts: { url: string; parentElement: HTMLElement | null }) => void } }).Calendly.initInlineWidget({
+                url: CALENDLY_WIDGET_URL,
                 parentElement: document.getElementById("calendly-inline-container"),
             });
         }
@@ -43,9 +43,8 @@ export function Contact() {
                     <div className="pt-8">
                         <div
                             id="calendly-inline-container"
-                            className="calendly-inline-widget rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl mx-auto max-w-3xl"
-                            data-url="https://calendly.com/ericson-barato/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=6dd58e"
-                            style={{ minWidth: "320px", height: "700px" }}
+                            className="calendly-inline-widget rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl mx-auto max-w-3xl min-w-[320px] h-[700px]"
+                            data-url={CALENDLY_WIDGET_URL}
                         />
                     </div>
                 </motion.div>
@@ -53,4 +52,3 @@ export function Contact() {
         </section>
     );
 }
-

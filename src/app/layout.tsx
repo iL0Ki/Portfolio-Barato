@@ -4,12 +4,12 @@ import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-geist-sans",
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-geist-mono",
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
